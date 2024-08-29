@@ -7,19 +7,19 @@ const recognition = new SpeechRecognition();
 recognition.lang = 'pt-br'
 recognition.start()
 
-recognition.addEventListener('result', onSpeak)
+recognition.addEventListener('result', onSpeak) 
 
 function onSpeak(e) {
     chute = e.results[0][0].transcript
-    console.log("oi")
     exibeChuteNaTela(chute)
+    // aula 4
     verificaSeOChutePossuiUmValorValido(chute)
 }
 
 function exibeChuteNaTela(chute) {
     elementoChute.innerHTML = `
         <div>Você disse</div>
-        <span class="box">${chute}</span>    
+        <span class="box">${chute}</span>
     `
 }
 
